@@ -1,0 +1,8 @@
+setwd("/Users/ericweber/GitHub/datasciencecoursera/DataScience5ReprodResearch/RepData_PeerAssessment1")
+data<-read.csv("activity.csv", colClasses = c("integer", "Date", "factor"))
+data$month <- as.numeric(format(data$date), "%m")
+noNA<- na.omit(data)
+rownames(noNA)<- 1:nrow(noNA)
+head(noNA)
+dim(noNA)
+library(ggplot2)
